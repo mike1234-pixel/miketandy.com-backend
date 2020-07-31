@@ -1,12 +1,28 @@
+// CREATE A CONTACT PAGE AND HANDLE POST REQUESTS
+// can just mailto from the server or something...
+
 const express = require("express");
 const fs = require("fs");
+const bodyParser = require("body-parser");
 var cors = require("cors");
 
-// const mongoose = require("mongoose");
-// const dotenv = require("dotenv");
-
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+app.post("/contact", (req, res) => {
+  // let contactFormPost = {
+  //   firstName: req.body.firstName,
+  //   lastName: req.body.lastName,
+  //   email: req.body.email,
+  //   message: req.body.email,
+  // };
+
+  console.log("POST REQUEST OCCURRED");
+  console.log(req.body);
+
+  res.end("submitted");
+});
 
 // dotenv.config({ path: "./config.env" });
 
@@ -40,6 +56,7 @@ app.get("/blogEntries", (req, res) => {
       blogEntries: blogEntries,
     },
   });
+  console.log("GET REQUEST OCCURRED");
 });
 
 const port = 4000;
