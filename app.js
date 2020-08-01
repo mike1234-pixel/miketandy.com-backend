@@ -80,6 +80,51 @@ app.post("/contact", (req, res) => {
   res.end("submitted");
 });
 
+app.post("/blogComment", (req, res) => {
+  let comment = {
+    commentName: req.body.name,
+    commentContent: req.body.comment,
+  };
+
+  fs.readFile("./dev-data/blogEntries.json", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      let blogEntriesJSObject = JSON.parse(data); // js object
+
+      for (var key in blogEntriesJSObject) {
+        var obj = blogEntriesJSObject[key];
+        for (var title in obj) {
+          if (
+            obj.title === req.body.articleTitle &&
+            obj.comment.includes(comment) === false
+          ) {
+            console.log(Array.isArray(obj.comment)); // true
+
+            obj.comment.push(comment);
+          }
+        }
+      }
+      const newData = JSON.stringify(blogEntriesJSObject);
+
+      fs.writeFile(
+        "./dev-data/blogEntries.json",
+        newData,
+        "utf-8",
+        (err, res) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("file written");
+          }
+        }
+      );
+    }
+  });
+
+  res.end();
+});
+
 app.get("/blogEntries", (req, res) => {
   res.status(200).json({
     status: "success",
@@ -93,21 +138,3 @@ const port = 4000;
 app.listen(port, () => {
   console.log(`App running on port ${port}`);
 });
-
-// const DB = process.env.DATABASE.replace(
-//   "<PASSWORD>",
-//   process.env.DATABASE_PASSWORD
-// );
-
-// // connection to mongodb successful, now need to read the collection and save it in blogEntries var to send the data back to react
-// mongoose
-//   .connect(DB, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true,
-//   })
-//   .then((con) => {
-//     console.log(con.connections);
-//     console.log("DB connection successful.");
-//   });
