@@ -45,14 +45,29 @@ app.post("/contact", (req, res) => {
     },
   });
 
-  let mailOptions = {
+  let mailtoMeMailOptions = {
     from: process.env.MY_EMAIL_ADDRESS,
     to: process.env.MY_EMAIL_ADDRESS,
     subject: "Contact Form Message",
     text: `Message from email address: ${req.body.email} ${req.body.firstName} ${req.body.lastName}: ${req.body.message}.`,
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
+  let mailtoSenderMailOptions = {
+    from: process.env.MY_EMAIL_ADDRESS,
+    to: req.body.email,
+    subject: "Thanks for Getting In Touch",
+    text: "I have received your message and will be in touch with you shortly.",
+  };
+
+  transporter.sendMail(mailtoMeMailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  transporter.sendMail(mailtoSenderMailOptions, (error, info) => {
     if (error) {
       console.log(error);
     } else {
