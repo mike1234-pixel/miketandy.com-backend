@@ -82,7 +82,13 @@ app.post("/contact", (req, res) => {
 
 app.post("/blogComment", (req, res) => {
   const date = new Date();
-  const time = date.getHours() + ":" + date.getMinutes();
+  let time;
+
+  if (date.getMinutes() >= 0 && date.getMinutes() <= 9) {
+    time = date.getHours() + ":0" + date.getMinutes();
+  } else {
+    time = date.getHours() + ":" + date.getMinutes();
+  }
 
   let comment = {
     commentName: req.body.name,
