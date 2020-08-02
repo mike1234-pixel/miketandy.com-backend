@@ -81,9 +81,18 @@ app.post("/contact", (req, res) => {
 });
 
 app.post("/blogComment", (req, res) => {
+  const date = new Date();
+  const time = date.getHours() + ":" + date.getMinutes();
+
   let comment = {
     commentName: req.body.name,
     commentContent: req.body.comment,
+    commentDateAndTime: {
+      commentYear: date.getFullYear(),
+      commentMonth: date.getMonth() + 1,
+      commentDate: date.getDate(),
+      commentTime: time,
+    },
   };
 
   fs.readFile("./dev-data/blogEntries.json", "utf8", (err, data) => {
