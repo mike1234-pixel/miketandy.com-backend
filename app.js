@@ -80,6 +80,9 @@ app.post("/contact", (req, res) => {
   res.end("submitted");
 });
 
+// put requests are suitable when the data is being drawn from a database and there's middleware like mongoose interceding doing the file reads.
+// in this case the data is drawn from a local json file so post is the appropriate method.
+// "Mongoose model provides an interface to the database for creating, querying, updating, deleting records, etc."
 app.post("/blogComment", (req, res) => {
   const date = new Date();
   let time;
