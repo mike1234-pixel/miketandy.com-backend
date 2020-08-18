@@ -149,7 +149,7 @@ app.get("/blogEntries", (req, res) => {
   });
 });
 
-const port = 4000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`App running on port ${port}`);
 });
