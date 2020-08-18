@@ -18,6 +18,15 @@ const blogEntries = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
 );
 
+// cors
+app.all("/", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+});
+
 app.post("/contact", (req, res) => {
   // OAUTH
   const myOAuth2Client = new OAuth2(
@@ -153,3 +162,5 @@ const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`App running on port ${port}`);
 });
+
+// cors
