@@ -1,13 +1,12 @@
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
 
 // google-OAuth
 const { google } = require("googleapis");
