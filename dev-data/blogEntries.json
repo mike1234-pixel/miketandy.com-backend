@@ -5,98 +5,7 @@
     "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
     "date": "11/07/2020",
     "img": "https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "comment": [
-      {
-        "commentName": "MIKE",
-        "commentContent": "What a fantastic article. I wholeheartedly agree with what you have to say, you a Kubernetes genius clearly!",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 2,
-          "commentTime": "23:14"
-        }
-      },
-      {
-        "commentName": "JOHN",
-        "commentContent": "You are the KING OF KUBERNETES!",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 2,
-          "commentTime": "23:14"
-        }
-      },
-      {
-        "commentName": "ELON MUSK",
-        "commentContent": "You are killing it bro!",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 2,
-          "commentTime": "23:15"
-        }
-      },
-      {
-        "commentName": "BILL GATES",
-        "commentContent": "Thanks for introducing Kubernetes to our company.",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 2,
-          "commentTime": "23:22"
-        }
-      },
-      {
-        "commentName": "STEVE JOBS",
-        "commentContent": "You truly think different.",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 2,
-          "commentTime": "23:25"
-        }
-      },
-      {
-        "commentName": "PATRICK STEWART (from star trek)",
-        "commentContent": "I love your blog and read it every day with my morning cup of cha. I know understand kubernetes thanks to your blog, you have... made it so.",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "11:30"
-        }
-      },
-      {
-        "commentName": "MARSHALL MATHERS",
-        "commentContent": "Guess who's back, shady's back, back again",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "15:20"
-        }
-      },
-      {
-        "commentName": "MIKE",
-        "commentContent": "new comment!",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "19:20"
-        }
-      },
-      {
-        "commentName": "Mike",
-        "commentContent": "New comment2!",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "19:20"
-        }
-      }
-    ]
+    "comment": []
   },
   {
     "id": 2,
@@ -104,38 +13,7 @@
     "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
     "date": "19/06/2020",
     "img": "https://images.pexels.com/photos/286760/pexels-photo-286760.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "comment": [
-      {
-        "commentName": "JERONIMO",
-        "commentContent": "NEW COMMENT MONSIEUR",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "18:58"
-        }
-      },
-      {
-        "commentName": "NEW COMMENT",
-        "commentContent": "NEW COMMENT TODAY",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "19:04"
-        }
-      },
-      {
-        "commentName": "MIKE",
-        "commentContent": "new comment3!",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "19:23"
-        }
-      }
-    ]
+    "comment": []
   },
   {
     "id": 3,
@@ -175,18 +53,7 @@
     "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
     "date": "10/06/2020",
     "img": "https://images.pexels.com/photos/116909/pexels-photo-116909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "comment": [
-      {
-        "commentName": "STUART",
-        "commentContent": "I AM STUART",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "19:12"
-        }
-      }
-    ]
+    "comment": []
   },
   {
     "id": 8,
@@ -210,18 +77,7 @@
     "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
     "date": "10/06/2020",
     "img": "https://images.pexels.com/photos/116909/pexels-photo-116909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "comment": [
-      {
-        "commentName": "JOHN",
-        "commentContent": "NEW COMMENT",
-        "commentDateAndTime": {
-          "commentYear": 2020,
-          "commentMonth": 8,
-          "commentDate": 3,
-          "commentTime": "18:55"
-        }
-      }
-    ]
+    "comment": []
   },
   {
     "id": 11,
