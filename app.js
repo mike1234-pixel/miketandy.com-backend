@@ -1,12 +1,13 @@
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
+const favicon = require("express-favicon");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(favicon(__dirname + "/favicon/favicon.ico"));
 
 // google-OAuth
 const { google } = require("googleapis");
