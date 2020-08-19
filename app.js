@@ -26,6 +26,9 @@ app.post("/contact", (req, res) => {
     "https://developers.google.com/oauthplayground"
   );
 
+  console.log(`REQUEST.BODY: ${req.body}`);
+  console.log(`TYPE OF REQ.BODY.EMAIL: ${typeof req.body.email}`);
+
   myOAuth2Client.setCredentials({
     refresh_token: process.env.GOOGLE_OAUTH_REFRESH_TOKEN,
   });
