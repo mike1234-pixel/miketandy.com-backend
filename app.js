@@ -10,12 +10,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(favicon(__dirname + "/favicon/favicon.ico"));
 
+// mongoose connect to mongodb
 const DB = process.env.DATABASE.replace(
   "<PASSWORD>",
   process.env.MIKEMONGO2_DATABASE_PASSWORD
 );
 
-// mongoose connect to mongodb
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
@@ -26,6 +26,32 @@ mongoose
   .then((con) => {
     console.log(con.connections);
     console.log("DB connection successful.");
+  });
+
+// schema --> defines the structure of the document
+const blogEntrySchema = new mongoose.Schema({
+  post_id: Number,
+  title: String,
+  content: String,
+  date: String,
+  img: String,
+  comment: Array,
+});
+
+// model --> wraps schema and allows CRUD ops with db
+const blogEntryModel = mongoose.model(`blog-entries`, blogEntrySchema);
+// ----------------------------------------------> must be name of collection! <---------------------------------------------
+
+// test
+blogEntryModel
+  .findOne({
+    post_id: 2,
+  })
+  .then((doc) => {
+    console.log(doc);
+  })
+  .catch((err) => {
+    console.error(err);
   });
 
 // google-OAuth
