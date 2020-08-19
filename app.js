@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
 const favicon = require("express-favicon");
@@ -8,6 +9,24 @@ const favicon = require("express-favicon");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(favicon(__dirname + "/favicon/favicon.ico"));
+
+const DB = process.env.DATABASE.replace(
+  "<PASSWORD>",
+  process.env.MIKEMONGO2_DATABASE_PASSWORD
+);
+
+// mongoose connect to mongodb
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then((con) => {
+    console.log(con.connections);
+    console.log("DB connection successful.");
+  });
 
 // google-OAuth
 const { google } = require("googleapis");
