@@ -43,30 +43,9 @@ const blogEntrySchema = new mongoose.Schema({
 const blogEntryModel = mongoose.model(`blog-entries`, blogEntrySchema);
 // ----------------------------------------------> must be name of collection! <---------------------------------------------
 
-// top-level/synchronous
-// find all blog data
-// -------typeof object;
-
-// blogEntryModel
-//   .find({})
-//   .then((doc) => {
-//     // console.log(doc);
-//     let blogEntries = doc;
-//     console.log(blogEntries);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
-
-// const blogEntries2 = JSON.parse(
-//   fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
-// );
-
-// console.log(
-//   `BLOGENTRIES1 (DB): ${blogEntries} : BLOGENTRIES2 (JSON): ${blogEntries2}`
-// );
-
-// blogEntries1 = [object Promise]
+const blogEntries2 = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
+);
 
 // google-OAuth
 const { google } = require("googleapis");
@@ -158,41 +137,18 @@ app.post("/blogComment", (req, res) => {
     },
   };
 
-  fs.readFile("./dev-data/blogEntries.json", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      let blogEntriesJSObject = JSON.parse(data); // js object
+  blogEntryModel.findOneAndUpdate(
+    { title: req.body.articleTitle },
+    { $push: { comment: comment } },
 
-      for (var key in blogEntriesJSObject) {
-        var obj = blogEntriesJSObject[key];
-        for (var title in obj) {
-          if (
-            obj.title === req.body.articleTitle &&
-            obj.comment.includes(comment) === false
-          ) {
-            console.log(Array.isArray(obj.comment)); // true
-
-            obj.comment.push(comment);
-          }
-        }
+    (err, success) => {
+      if (err) {
+        console.log(`ERRRRRRROOOORRRRR ${err}`);
+      } else {
+        console.log(`SUUUUCCCCCEEESSSS ${success}`);
       }
-      const newData = JSON.stringify(blogEntriesJSObject);
-
-      fs.writeFile(
-        "./dev-data/blogEntries.json",
-        newData,
-        "utf-8",
-        (err, res) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("file written");
-          }
-        }
-      );
     }
-  });
+  );
 
   res.end();
 });
@@ -202,9 +158,7 @@ app.get("/blogEntries", (req, res) => {
   blogEntryModel
     .find({})
     .then((doc) => {
-      // console.log(doc);
       blogEntries = doc;
-      console.log(`POINT1: ${blogEntries}`);
 
       res.status(200).json({
         status: "success",
@@ -223,5 +177,3 @@ const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`App running on port ${port}`);
 });
-
-// cors
