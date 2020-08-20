@@ -26,7 +26,8 @@ mongoose
   .then((con) => {
     console.log(con.connections);
     console.log("DB connection successful.");
-  });
+  })
+  .catch((err) => console.log(err)); //
 
 // schema --> defines the structure of the document
 const blogEntrySchema = new mongoose.Schema({
@@ -45,6 +46,17 @@ const blogEntryModel = mongoose.model(`blog-entries`, blogEntrySchema);
 // top-level/synchronous
 // find all blog data
 // -------typeof object;
+
+// blogEntryModel
+//   .find({})
+//   .then((doc) => {
+//     // console.log(doc);
+//     let blogEntries = doc;
+//     console.log(blogEntries);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 // const blogEntries2 = JSON.parse(
 //   fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
@@ -186,12 +198,13 @@ app.post("/blogComment", (req, res) => {
 });
 
 app.get("/blogEntries", (req, res) => {
+  let blogEntries;
   blogEntryModel
     .find({})
     .then((doc) => {
       // console.log(doc);
-      let blogEntries = doc;
-      console.log(blogEntries);
+      blogEntries = doc;
+      console.log(`POINT1: ${blogEntries}`);
 
       res.status(200).json({
         status: "success",
@@ -200,6 +213,7 @@ app.get("/blogEntries", (req, res) => {
         },
       });
     })
+
     .catch((err) => {
       console.error(err);
     });
