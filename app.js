@@ -121,9 +121,9 @@ app.post("/blogComment", (req, res) => {
   let time;
 
   if (date.getMinutes() >= 0 && date.getMinutes() <= 9) {
-    time = date.getHours() + ":0" + date.getMinutes();
+    time = date.getHours() + 1 + ":0" + date.getMinutes();
   } else {
-    time = date.getHours() + ":" + date.getMinutes();
+    time = date.getHours() + 1 + ":" + date.getMinutes();
   }
 
   let comment = {
