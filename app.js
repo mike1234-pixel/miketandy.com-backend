@@ -45,18 +45,16 @@ const blogEntryModel = mongoose.model(`blog-entries`, blogEntrySchema);
 // top-level/synchronous
 // find all blog data
 // -------typeof object;
-const blogEntries = blogEntryModel
-  .find({})
-  .then((doc) => {
-    console.log(doc);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
 
-// const blogEntries = JSON.parse(
+// const blogEntries2 = JSON.parse(
 //   fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
 // );
+
+// console.log(
+//   `BLOGENTRIES1 (DB): ${blogEntries} : BLOGENTRIES2 (JSON): ${blogEntries2}`
+// );
+
+// blogEntries1 = [object Promise]
 
 // google-OAuth
 const { google } = require("googleapis");
@@ -188,12 +186,23 @@ app.post("/blogComment", (req, res) => {
 });
 
 app.get("/blogEntries", (req, res) => {
-  res.status(200).json({
-    status: "success",
-    data: {
-      blogEntries: blogEntries,
-    },
-  });
+  blogEntryModel
+    .find({})
+    .then((doc) => {
+      // console.log(doc);
+      let blogEntries = doc;
+      console.log(blogEntries);
+
+      res.status(200).json({
+        status: "success",
+        data: {
+          blogEntries: blogEntries,
+        },
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 });
 
 const port = process.env.PORT;
