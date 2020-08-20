@@ -42,11 +42,11 @@ const blogEntrySchema = new mongoose.Schema({
 const blogEntryModel = mongoose.model(`blog-entries`, blogEntrySchema);
 // ----------------------------------------------> must be name of collection! <---------------------------------------------
 
-// test
-blogEntryModel
-  .findOne({
-    post_id: 2,
-  })
+// top-level/synchronous
+// find all blog data
+// -------typeof object;
+const blogEntries = blogEntryModel
+  .find({})
   .then((doc) => {
     console.log(doc);
   })
@@ -54,14 +54,13 @@ blogEntryModel
     console.error(err);
   });
 
+// const blogEntries = JSON.parse(
+//   fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
+// );
+
 // google-OAuth
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
-
-// top-level/synchronous
-const blogEntries = JSON.parse(
-  fs.readFileSync(`${__dirname}/dev-data/blogEntries.json`)
-);
 
 app.post("/contact", (req, res) => {
   // OAUTH
