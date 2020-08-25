@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(favicon(__dirname + "/favicon/favicon.ico"));
 app.use(
   cors({
-    origin: "https://www.miketandy.com/",
+    origin: "https://thebigone-api.herokuapp.com/blogEntries",
   })
 );
 
