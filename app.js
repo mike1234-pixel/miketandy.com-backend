@@ -4,21 +4,15 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
-const cors = require("cors");
 const favicon = require("express-favicon");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(favicon(__dirname + "/favicon/favicon.ico"));
-// app.use(
-//   cors({
-//     origin: "https://thebigone-api.herokuapp.com/blogEntries",
-//   })
-// );
 
 // cors
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "https://www.miketandy.com");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
